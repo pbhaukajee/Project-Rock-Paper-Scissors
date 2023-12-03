@@ -15,7 +15,7 @@ function getComputerChoice() {
 getComputerChoice();
 
 //make a function that shows the final result
-function result(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
   let result;
   if (playerSelection === "rock" && computerSelection === "paper") {
     result = console.log("You Lose! Paper beats Rock");
@@ -49,4 +49,4 @@ if (
 let computerInput = getComputerChoice();
 console.log(`Your input: ${playerInput}`);
 console.log(`Computer's input: ${computerInput}`);
-result(playerInput, computerInput);
+playRound(playerInput, computerInput);
