@@ -1,0 +1,11 @@
+body {
+  background-color: #f6eee3;
+}
+
+.container {
+  margin: 50px auto;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    "sans-serif";
+  color: rgba(32, 34, 38, 0.905);
+}
