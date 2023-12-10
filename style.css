@@ -5,7 +5,26 @@ body {
 .container {
   margin: 50px auto;
   text-align: center;
+}
+
+h1 {
   font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
     "sans-serif";
   color: rgba(32, 34, 38, 0.905);
+}
+
+.game {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.rock,
+.paper,
+.scissors {
+  width: 250px;
+  height: auto;
+  border-radius: 50%;
 }
