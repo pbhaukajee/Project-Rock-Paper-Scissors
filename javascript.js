@@ -1,65 +1,3 @@
-// //make a function that shows the final result
-// function playRound(playerSelection, computerSelection) {
-//   let winner;
-//   if (
-//     (playerSelection === "rock" && computerSelection === "paper") ||
-//     (playerSelection === "paper" && computerSelection === "scissors") ||
-//     (playerSelection === "scissors" && computerSelection === "rock")
-//   ) {
-//     winner = "computer";
-//     console.log("Computer is the winner");
-//   } else if (
-//     (playerSelection === "paper" && computerSelection === "rock") ||
-//     (playerSelection === "scissors" && computerSelection === "paper") ||
-//     (playerSelection === "rock" && computerSelection === "scissors")
-//   ) {
-//     winner = "player";
-//     console.log("You are the winner");
-//   } else {
-//     winner = "tie";
-//     console.log("It's a tie");
-//   }
-//   return winner;
-// }
-
-// function game() {
-//   let yourScore = 0;
-//   let computerScore = 0;
-//   for (i = 0; i < 5; i++) {
-//     let playerInput = "rock";
-//     playerInput = playerInput.toLowerCase();
-//     let computerInput = getComputerChoice();
-//     let winner = playRound(playerInput, computerInput);
-//     if (winner === "player") {
-//       yourScore += 1;
-//       console.log(
-//         `Your score: ${yourScore}  Computer Score: ${computerScore} `
-//       );
-//     } else if (winner === "computer") {
-//       computerScore += 1;
-//       console.log(
-//         `Your score: ${yourScore}  Computer Score: ${computerScore} `
-//       );
-//     } else {
-//       yourScore += 0;
-//       computerScore += 0;
-//       console.log(
-//         `Your score: ${yourScore}  Computer Score: ${computerScore} `
-//       );
-//     }
-//   }
-//   if (yourScore > computerScore) {
-//     console.log("Yon Won!");
-//   } else if (yourScore < computerScore) {
-//     console.log("You lost!");
-//   } else {
-//     console.log("It's a tie!");
-//   }
-//   return;
-// }
-
-// game();
-
 const container = document.querySelector(".container");
 const images = document.querySelector(".images");
 const rock = document.querySelector(".rock");
@@ -79,4 +17,27 @@ function getComputerChoice() {
   } else {
     return "scissors";
   }
+}
+
+function playRound(playerSelection, computerSelection) {
+  let winner;
+  if (
+    (playerSelection === "rock" && computerSelection === "paper") ||
+    (playerSelection === "paper" && computerSelection === "scissors") ||
+    (playerSelection === "scissors" && computerSelection === "rock")
+  ) {
+    winner = "computer";
+    console.log("Computer is the winner");
+  } else if (
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper") ||
+    (playerSelection === "rock" && computerSelection === "scissors")
+  ) {
+    winner = "player";
+    console.log("You are the winner");
+  } else {
+    winner = "tie";
+    console.log("It's a tie");
+  }
+  return winner;
 }
