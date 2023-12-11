@@ -1,5 +1,5 @@
 const container = document.querySelector(".container");
-const images = document.querySelector(".images");
+const image = document.querySelectorAll("img");
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
@@ -18,7 +18,11 @@ function getComputerChoice() {
     return "scissors";
   }
 }
+let yourScore = 0;
+let computerScore = 0;
+let gamePlayed = 0;
 
+//make a function that shows the final result
 function playRound(playerSelection, computerSelection) {
   let winner;
   if (
@@ -27,17 +31,47 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "rock")
   ) {
     winner = "computer";
-    console.log("Computer is the winner");
+    computerScore += 1;
   } else if (
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper") ||
     (playerSelection === "rock" && computerSelection === "scissors")
   ) {
     winner = "player";
-    console.log("You are the winner");
+    yourScore += 1;
   } else {
     winner = "tie";
-    console.log("It's a tie");
   }
-  return winner;
+  return;
 }
+
+function game() {
+  for (i = 0; i < 5; i++) {
+    let playerInput = "rock";
+    let computerInput = getComputerChoice();
+    playRound(playerInput, computerInput);
+    gamePlayed += 1;
+  }
+  finalwinner();
+  return;
+}
+
+function finalwinner() {
+  if (gamePlayed === 5) {
+    if (yourScore > computerScore) {
+      console.log("Yon Won!");
+    } else if (yourScore < computerScore) {
+      console.log("You lost!");
+    } else {
+      console.log("It's a tie!");
+    }
+  }
+}
+
+game();
+
+image.forEach((img) =>
+  img.addEventListener("click", () => {
+    console.log(img.alt);
+  })
+);
