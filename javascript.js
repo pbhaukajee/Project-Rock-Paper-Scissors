@@ -1,17 +1,3 @@
-// function getComputerChoice() {
-//   let choice = Math.floor(Math.random() * 3) + 1;
-//   if (choice == 1) {
-//     return "rock";
-//   } else if (choice == 2) {
-//     return "paper";
-//   } else {
-//     return "scissors";
-//   }
-// }
-
-// //calling the function
-// getComputerChoice();
-
 // //make a function that shows the final result
 // function playRound(playerSelection, computerSelection) {
 //   let winner;
@@ -73,3 +59,24 @@
 // }
 
 // game();
+
+const container = document.querySelector(".container");
+const images = document.querySelector(".images");
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+const result = document.querySelector(".result");
+const score = document.querySelector(".score");
+const playerScore = document.querySelector(".playerScore");
+const compScore = document.querySelector(".compScore");
+
+function getComputerChoice() {
+  let choice = Math.floor(Math.random() * 3) + 1;
+  if (choice == 1) {
+    return "rock";
+  } else if (choice == 2) {
+    return "paper";
+  } else {
+    return "scissors";
+  }
+}
