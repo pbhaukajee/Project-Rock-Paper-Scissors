@@ -37,15 +37,15 @@ h1 {
   gap: 30px;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: -5px;
-  display: "none";
 }
 .result {
   font-size: xx-large;
   font-weight: 900;
   color: rgba(32, 34, 38, 0.905);
   text-transform: uppercase;
+  display: none;
 }
-.restart {
+.playAgain {
   background-color: rgb(88, 84, 84);
   color: white;
   border-radius: 7px;
@@ -54,6 +54,7 @@ h1 {
   cursor: pointer;
   padding: 5px 20px 5px 20px;
   font-family: Arial, Helvetica, sans-serif;
+  display: none;
 }
 
 .choice {

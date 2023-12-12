@@ -1,5 +1,6 @@
 const image = document.querySelectorAll("img");
 const result = document.querySelector(".result");
+const playAgain = document.querySelector(".playAgain");
 const score = document.querySelector(".score");
 const playerScore = document.querySelector(".playerScore");
 const compScore = document.querySelector(".compScore");
@@ -47,6 +48,7 @@ function playRound(playerSelection, computerSelection) {
 
 function finalwinner() {
   result.style.display = "block";
+  playAgain.style.display = "block";
   if (yourScore > computerScore) {
     result.textContent = "You Won!";
   } else if (yourScore < computerScore) {
@@ -58,6 +60,9 @@ function finalwinner() {
 
 image.forEach((img) =>
   img.addEventListener("click", () => {
+    if (gamePlayed === 5) {
+      return;
+    }
     playerInput = img.alt;
     playerOption.textContent = `Player: ${img.alt}`;
     computerInput = getComputerChoice();
@@ -69,9 +74,11 @@ image.forEach((img) =>
 
     if (gamePlayed === 5) {
       finalwinner();
-    } else if (gamePlayed > 5) {
-      restart();
+      return;
     }
+    playAgain.addEventListener("click", () => {
+      restart();
+    });
   })
 );
 
@@ -84,4 +91,5 @@ function restart() {
   playerScore.textContent = "Player Score:";
   compScore.textContent = "Computer's Score:";
   result.style.display = "none";
+  playAgain.style.display = "none";
 }
