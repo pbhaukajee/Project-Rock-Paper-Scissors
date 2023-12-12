@@ -46,12 +46,13 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function finalwinner() {
+  result.style.display = "block";
   if (yourScore > computerScore) {
-    console.log("Yon Won!");
+    result.textContent = "You Won!";
   } else if (yourScore < computerScore) {
-    console.log("You lost!");
+    result.textContent = "You Lost!";
   } else {
-    console.log("It's a tie!");
+    result.textContent = "It's a tie!";
   }
 }
 
@@ -61,13 +62,14 @@ image.forEach((img) =>
     playerOption.textContent = `Player: ${img.alt}`;
     computerInput = getComputerChoice();
     computerOption.textContent = `Computer: ${computerInput}`;
-    const winner = playRound(playerInput, computerInput);
+    playRound(playerInput, computerInput);
     playerScore.textContent = `Player Score: ${yourScore}`;
     compScore.textContent = `Computer Score: ${computerScore}`;
     gamePlayed += 1;
 
     if (gamePlayed === 5) {
       finalwinner();
+    } else if (gamePlayed > 5) {
       restart();
     }
   })
@@ -77,4 +79,9 @@ function restart() {
   yourScore = 0;
   computerScore = 0;
   gamePlayed = 0;
+  playerOption.textContent = "Player: ❓";
+  computerOption.textContent = "Computer: 🖥";
+  playerScore.textContent = "Player Score:";
+  compScore.textContent = "Computer's Score:";
+  result.style.display = "none";
 }
